@@ -230,6 +230,22 @@ export default async function SkillPage({
               </div>
             </div>
 
+            {/* Main CTA */}
+            <div className="rounded-2xl bg-white/[0.04] border border-white/10 px-8 py-10 text-center mb-6">
+              <h2 className="text-2xl font-bold mb-2">Don&apos;t want to set this up yourself?</h2>
+              <p className="text-white/50 mb-6 max-w-md mx-auto">
+                We install and configure <span className="text-white/80 font-medium">{skill.name}</span> and the rest of your AI agent — done for you, same day. No coding needed.
+              </p>
+              <Link
+                href={CALENDLY_URL}
+                target="_blank"
+                className="inline-block bg-white text-black px-8 py-3.5 rounded-xl font-semibold text-base hover:bg-white/90 transition-colors"
+              >
+                Book a free 15-min call →
+              </Link>
+              <p className="text-xs text-white/30 mt-3">No commitment. We&apos;ll figure out the right setup on the call.</p>
+            </div>
+
             {/* Related skills */}
             {related.length > 0 && (
               <div className="mt-2">
@@ -316,20 +332,6 @@ export default async function SkillPage({
               </div>
             </div>
 
-            {/* SetupClaw CTA */}
-            <div className="border border-white/10 rounded-xl px-5 py-4 bg-white/[0.02]">
-              <p className="text-sm font-semibold mb-1">Need help setting this up?</p>
-              <p className="text-xs text-white/40 mb-3">
-                We configure your AI agent with the right skills — done for you, same day. No coding needed.
-              </p>
-              <Link
-                href={CALENDLY_URL}
-                target="_blank"
-                className="block text-center border border-white/20 px-4 py-2 rounded-lg text-sm text-white/70 hover:text-white hover:border-white/40 transition-colors"
-              >
-                Book a free call →
-              </Link>
-            </div>
           </div>
         </div>
       </div>
