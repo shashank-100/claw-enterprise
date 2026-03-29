@@ -52,6 +52,7 @@ export default async function SkillPage({
   const clawhubUrl = `https://clawskills.sh/skills/${skill.slug}`;
   const author = skill.slug.split("-")[0];
   const skillName = skill.slug.slice(author.length + 1);
+  const githubUrl = `https://github.com/openclaw/skills/tree/main/skills/${author}/${skillName}`;
   const stats = getStats(skill.slug);
 
   return (
@@ -194,9 +195,14 @@ export default async function SkillPage({
                     ~/.openclaw/skills/
                   </div>
                 </div>
-                <p className="text-xs text-white/30">
-                  Or paste the ClawHub link directly into your assistant&apos;s chat — it will handle setup automatically.
-                </p>
+                <div className="flex gap-2 pt-1">
+                  <Link href={clawhubUrl} target="_blank" className="flex-1 text-center border border-white/10 rounded-lg px-3 py-2 text-xs text-white/50 hover:text-white hover:border-white/30 transition-colors">
+                    View on ClawHub →
+                  </Link>
+                  <Link href={githubUrl} target="_blank" className="flex-1 text-center border border-white/10 rounded-lg px-3 py-2 text-xs text-white/50 hover:text-white hover:border-white/30 transition-colors">
+                    GitHub source →
+                  </Link>
+                </div>
               </div>
             </div>
 
@@ -328,6 +334,14 @@ export default async function SkillPage({
                 <div className="flex justify-between">
                   <span className="text-white/40">Downloads</span>
                   <span className="text-white/70">⬇ {stats.downloads}</span>
+                </div>
+                <div className="flex justify-between pt-1 border-t border-white/10">
+                  <span className="text-white/40">ClawHub</span>
+                  <Link href={clawhubUrl} target="_blank" className="text-white/70 hover:text-white underline text-xs">View →</Link>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-white/40">GitHub</span>
+                  <Link href={githubUrl} target="_blank" className="text-white/70 hover:text-white underline text-xs">Source →</Link>
                 </div>
               </div>
             </div>
