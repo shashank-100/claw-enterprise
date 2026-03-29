@@ -52,7 +52,7 @@ export default async function SkillPage({
   const clawhubUrl = `https://clawskills.sh/skills/${skill.slug}`;
   const author = skill.slug.split("-")[0];
   const skillName = skill.slug.slice(author.length + 1);
-  const githubUrl = `https://github.com/openclaw/skills/tree/main/skills/${author}/${skillName}`;
+  const githubUrl = `https://github.com/VoltAgent/awesome-openclaw-skills/blob/main/categories/${skill.category}.md`;
   const stats = getStats(skill.slug);
 
   return (
